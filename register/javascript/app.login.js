@@ -58,7 +58,7 @@ loginForm.addEventListener("submit", function (e) {
 		const passwordLoginValue = passwordLogin.value;
 
 		// console.log(fullNameTrimmed);
-		fetch("http://localhost/project/register/includes/login.inc.php", {
+		fetch("http://localhost/stationary/register/includes/login.inc.php", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",

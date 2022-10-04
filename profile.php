@@ -88,7 +88,7 @@ require_once './functions.php';
                                     <td class="column-2"><?= $bill['date_ordered'] ?></td>
                                     <td class="column-3"><?= $bill['total_price'] ?> JOD </td>
                                     <td class="column-4 ">
-                                        <a href="./order-details.php?bill_id=<?= $bill['id'] ?>&bill_num=<?= $bill['bill_number'] ?>">
+                                        <a href="./order-details.php?bill_id=<?= $bill['id'] ?>&bill_num=<?= $bill['bill_number'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                             View
                                         </a>
                                     </td>
