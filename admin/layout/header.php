@@ -16,20 +16,24 @@ if (isset($_SESSION["email"])) {
 
 
 
+
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+                <div class="sidebar-brand-icon-text">
+                    <h3>1</h3>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-2 ">
+                    <h3>More</h3> <sup></sup>
+                </div>
             </a>
 
             <!-- Divider -->
@@ -53,19 +57,19 @@ if (isset($_SESSION["email"])) {
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="AllProducts.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-boxes"></i>
                     <span>All Products</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="Addproduct.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-box"></i>
                     <span>Add New Product</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="AddCategories.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-th-list"></i>
                     <span>Add New Category</span></a>
             </li>
 
@@ -81,7 +85,7 @@ if (isset($_SESSION["email"])) {
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="Orders.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-shopping-bag"></i>
                     <span>All Orders</span></a>
             </li>
 
@@ -95,7 +99,7 @@ if (isset($_SESSION["email"])) {
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="allusers.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-users"></i>
                     <span>All Users</span></a>
             </li>
 
@@ -127,19 +131,19 @@ if (isset($_SESSION["email"])) {
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <!-- Topbar Search -->
 
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 
 
+                        <!-- Nav Item - Alerts -->
 
 
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-
-
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">

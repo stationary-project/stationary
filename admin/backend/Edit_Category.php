@@ -30,7 +30,7 @@ if(isset($_POST ['update'])){
     
     
     move_uploaded_file($image_temp_location , $folder.$image);
-    
+
     $sql = " UPDATE `categories` SET `Name` = '$name', `image` = '$image'  WHERE `categories`.`id` = $id ";
     $result = mysqli_query($conn, $sql);
     if($result){
@@ -49,9 +49,6 @@ if(isset($_POST ['update'])){
 
 ?>
 
-<h1 class="page-header">
-   Edit Category
-</h1>
 <div class="container">
   <div class="row">
     <div class="col">

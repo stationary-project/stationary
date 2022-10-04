@@ -124,8 +124,8 @@ function add_category() {
         <td>'.$name.'</td>
         <td> <img src=img/'.$image.' style= width:50px; hieght:50px; > </td>
        <td> 
-       <a href="EditCategory.php?id='.$id.'" class="btn btn-warning" >Edit</a>
-       <a href="./backend/Delete_Category.php?id='.$id.'" class="btn btn-danger" >Delete</a></tr>';
+       <a href="EditCategory.php?id='.$id.'"class="btn btn-warning btn-circle"> <i class="far fa-edit"></i></a>
+       <a href="./backend/Delete_Category.php?id='.$id.'"class="btn btn-danger btn-circle"> <i class="fas fa-trash"></i></a></tr>';
 
         
             }
@@ -208,6 +208,60 @@ if ($result = mysqli_query($conn, $sql)) {
 }
 }
 
+function Count_number_of_row_subscriber () {
+    global $conn ;
+
+$sql = ("SELECT * FROM newsletter");
+if ($result = mysqli_query($conn, $sql)) {
+
+    // Return the number of rows in result set
+    $rowcount = mysqli_num_rows( $result );  
+    echo $rowcount  ;    
+}
+}
+
+function Count_number_of_row_reviews () {
+    global $conn ;
+
+$sql = ("SELECT * FROM reviews");
+if ($result = mysqli_query($conn, $sql)) {
+
+    // Return the number of rows in result set
+    $rowcount = mysqli_num_rows( $result );  
+    echo $rowcount  ;    
+}
+}
+
+
+function Count_number_of_row_products () {
+    global $conn ;
+
+$sql = ("SELECT * FROM products");
+if ($result = mysqli_query($conn, $sql)) {
+
+    // Return the number of rows in result set
+    $rowcount = mysqli_num_rows( $result );  
+    echo $rowcount  ;    
+}
+}
+
+function Count_number_of_row_users () {
+    global $conn ;
+
+$sql = ("SELECT * FROM users");
+if ($result = mysqli_query($conn, $sql)) {
+
+    // Return the number of rows in result set
+    $rowcount = mysqli_num_rows( $result );  
+    echo $rowcount  ;    
+}
+}
+
+
+
+
+
+
 function sum_all_orders () {
     global $conn ;
 
@@ -274,12 +328,13 @@ function avg_annual_orders () {
     global $conn ;
     
 
-    $sql = ("SELECT avg(total_price) from bill ");
+    $sql = ("SELECT sum(total_price) from bill ");
     if ($result = mysqli_query($conn, $sql)) {
 
     $row = mysqli_fetch_array($result);
+    $year=12;
     
-    echo $row[0].'JOD';
+    echo ($row[0]/$year).'JOD';
     
 }
 }

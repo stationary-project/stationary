@@ -3,38 +3,38 @@ require_once "connection.php"
 ?>
 
 
-<table id="example" class="table">
-  
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">category_id</th>
-      <th scope="col">image</th>
-      <th scope="col">Name</th>
-      <th scope="col">description</th>
-      <th scope="col">price</th>
-      <th scope="col">discount</th>
-      <th scope="col">date added</th>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Products</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>category_id</th>
+                                            <th>image</th>
+                                            <th>Name</th>
+                                            <th>description</th>
+                                            <th>price</th>
+                                            <th>discount</th>
+                                            <th>date added</th>
+                                            <th>action</th>
 
-    </tr>
-  </thead>
 
-<?php
+                                        </tr>
+                                    </thead>
+
+
+
+
+
+
+                                  <?php
 
 $sql = "SELECT * FROM `products`";
 $result = mysqli_query($conn, $sql);
-$num= mysqli_num_rows($result);
-$numberpages=10;
-$totalpages=ceil($num/$numberpages);
-if(isset($_GET['page'])){
-    $page=$_GET['page'];
-  }else{
-    $page=1;
-  }
-  $firstpage=($page-1)*$numberpages;
-  $sql = "SELECT * FROM `products` LIMIT $firstpage,$numberpages";
-  $result = mysqli_query($conn, $sql);
-  
   if ($result){
 
     while($row = mysqli_fetch_assoc($result)){
@@ -57,38 +57,40 @@ if(isset($_GET['page'])){
         <td>'.$price.'</td>
         <td>'.$discount.'</td>
         <td>'.$date_added.'</td>
-
+        
 
         <td>
-        <a href="./EditProduct.php?id='.$id.'" class="btn btn-warning" >Edit</a>
-        <a href="./backend/Delete_product.php?id='.$id.'" class="btn btn-danger" >Delete</a>
+        <a href="./EditProduct.php?id='.$id.'" class="btn btn-warning btn-circle"> <i class="far fa-edit"></i></a>
+        <a href="./backend/Delete_product.php?id='.$id.'" class="btn btn-danger btn-circle"> <i class="fas fa-trash"></i></a>
 
 
       </tr>';
-
-
-
-
-
-
-
-
 
 }
   }
 
   ?>
-
-</tbody>
 </table>
 
-<div class="pagenation" style="margin-left:225px ;">
+
+                            </div>
+                        </div>
+                    </div>
+
+                
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+<!-- <div class="pagenation" style="margin-left:225px ;">
 <?php
 
-for($btn=1;$btn<=$totalpages;$btn++){
+// for($btn=1;$btn<=$totalpages;$btn++){
 
-echo '<a href="allproducts.php?page='.$btn.'" class="btn btn-light my-5 mx-1 " >'.$btn.'</a>';
+// echo '<a href="allproducts.php?page='.$btn.'" class="btn btn-light my-5 mx-1 " >'.$btn.'</a>';
 
-}
+// }
 ?>
-</div>
+</div> -->

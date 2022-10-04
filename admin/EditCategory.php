@@ -18,7 +18,7 @@ require_once "backend/functions.php";
 ?>
 
 <div class="container-fluid px-4">
-                        <h1 class="mt-1">Edit Product </h1>
+                        <h1 class="mt-1">Edit Category </h1>
                         <ol class="breadcrumb mb-4">
                         </ol>
 </div>

@@ -76,8 +76,14 @@ if (isset($_POST['update'])) {
                 <div class="col-md-4"><b>status</b>
                     <select name="status" class="form-control" id="status"
                         value="<?php echo htmlentities($result->status); ?>">
-                        <option value="pending">pending</option>
-                        <option value="completed">completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="in_delviery">in Delivery</option>
+                        <option value="pick_up">Ready For PickUP</option>
+
+
+
                     </select>
                 </div>
             </div>

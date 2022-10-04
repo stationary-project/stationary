@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once "backend/connection.php";
 require_once "backend/functions.php";
 
@@ -6,22 +6,22 @@ require_once "backend/functions.php";
 
 <?php add_product(); ?>
 
-
+               
 
 
 <form action="" method="post" enctype="multipart/form-data">
 
 
-  <div class="col-md-6" style="margin-left:50px ;">
+<div class="col-md-6" style="margin-left:50px ;">
 
-    <div class="col-xs-3">
-      <label for="product-title">Product Name </label>
-      <input type="text" name="name" class="form-control">
+<div class="col-xs-3">
+    <label for="product-title">Product Name </label>
+        <input type="text" name="name" class="form-control">
     </div>
 
 
     <div class="col-xs-3">
-      <label for="product-title">Product Description</label>
+           <label for="product-title">Product Description</label>
       <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
     </div>
 
@@ -43,7 +43,7 @@ require_once "backend/functions.php";
       ?>
 
       <select name="category_id" id="" class="form-control">
-        <option value="">Select a category </option>
+        <option value="">Select Product Category </option>
         <?php foreach ($categories as $category) : ?>
 
 
@@ -51,26 +51,31 @@ require_once "backend/functions.php";
         <?php endforeach; ?>
 
       </select>
+     </div>
+<div><br></div>
 
-
-      <div><br></div>
-
-      <!-- Product Image -->
-      <div class="col-xs-3">
+    <!-- Product Image -->
+    <div class="col-xs-3">
         <label for="product-title">Product Image</label>
         <input type="file" name="file">
+      
+    </div>
 
-      </div>
-
-
-      <div class="col-xs-3">
-        <!-- <input type="submit" name="draft" class="btn btn-warning btn-lg" value="Draft"> -->
+     
+     <div class="col-xs-3">
+       <!-- <input type="submit" name="draft" class="btn btn-warning btn-lg" value="Draft"> -->
         <input type="submit" name="publish" class="btn btn-primary btn-lg" value="submit">
-      </div>
-
+    </div>
+    
 </form>
 
 
 </div>
 
 </div>
+
+
+
+
+
+
