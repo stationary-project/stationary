@@ -1,6 +1,13 @@
-<?php 
 
-include "layout\head.php";
+                
+                <?php 
+
+include "layout\head.php"
+?>
+<link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+<?php
 include "layout\header.php"
 
 
@@ -16,7 +23,7 @@ require_once "backend/functions.php";
 ?>
 
 <div class="container-fluid px-4">
-                        <h1 class="mt-1">Orders information</h1>
+                        <h1 class="mt-1">All Orders</h1>
                         <ol class="breadcrumb mb-4">
                         </ol>
 </div>
@@ -39,5 +46,11 @@ include "./backend/orderinfo.php"
 include "layout/footer.php"
 
 
-
 ?>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>

@@ -2,16 +2,25 @@
 require_once "PDOConnection.php";
 ?>
 
-        <table id="mytable" class="table table-bordred table-striped">
-            <thead>
+<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Users Data</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                              <thead>
+                <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email </th>
                 <th>Password </th>
                 <th>role</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <!-- <th>Edit</th> -->
+                <th>Action</th>
+                </tr>
             </thead>
+            <tbody>
             <?php
             $insert = $conn->prepare("SELECT * FROM users ");
             $insert->execute();
@@ -24,11 +33,12 @@ require_once "PDOConnection.php";
                     <td><?php echo htmlentities($result->email); ?></td>
                     <td><?php echo htmlentities($result->password); ?></td>
                     <td><?php echo htmlentities($result->role); ?></td>
-                    <td><a href="updateuser.php?id=<?php echo htmlentities($result->id); ?>"class="btn btn-warning" >Edit</a></td>
-                    <td><a href="allusers.php?del=<?php echo htmlentities($result->id); ?>"class="btn btn-danger" >Delete</a></td>
+                    <td><a href="updateuser.php?id=<?php echo htmlentities($result->id); ?>"class="btn btn-warning btn-circle"> <i class="far fa-edit"></i></a>
+                    <a href="allusers.php?del=<?php echo htmlentities($result->id); ?>"class="btn btn-danger btn-circle"> <i class="fas fa-trash"></a></td>
 
                 </tr>
             <?php } ?>
+        </tbody>
         </table>
 
     <?php
