@@ -51,7 +51,7 @@ $categories = getAllData("categories");
                     </div>
 
                     <div class="p-t-18">
-                        <button name="submit" type="submit" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                        <button name="submit-subscribe" type="submit" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                             Subscribe
                         </button>
                     </div>
@@ -67,7 +67,7 @@ $categories = getAllData("categories");
 require_once './config.php';
 require_once './functions.php';
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit-subscribe"])) {
 
     $subscriber = subscriber("newsletter", $_POST["email"]);
 

@@ -103,7 +103,10 @@ require_once './functions.php';
                                 <tr class="table_row">
 
                                     <td class="column-1">
-                                        <?= $order['name'] ?>
+                                        <a href="./product-detail.php?productid=<?php echo $order['product_id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+
+                                            <?= $order['name'] ?>
+                                        </a>
                                     </td>
                                     <td class="column-2">
                                         <div class="how-itemcart1">

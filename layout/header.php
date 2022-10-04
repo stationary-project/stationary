@@ -23,7 +23,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
             <nav class="limiter-menu-desktop p-l-45">
 
                 <!-- Logo desktop -->
-                <a href="#" class="logo">
+                <a href="./index.php" class="logo">
                     <img src="./images/icons/1morelogo.png" alt="IMG-LOGO">
                 </a>
 
@@ -118,7 +118,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="./index.php"><img src="./images/icons/1morelogo.png" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -160,13 +160,13 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
                 ?>
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="<?= $rows ?>">
                         <a href="./cart.php">
-                            <i class="zmdi zmdi-shopping-cart"></i>
+                            <i class="zmdi zmdi-shopping-cart" style="color:black"></i>
                         </a>
                     </div>
                 <?php else : ?>
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="0">
                         <a href="./registration.php">
-                            <i class="zmdi zmdi-shopping-cart"></i>
+                            <i class="zmdi zmdi-shopping-cart" style="color:black"></i>
                         </a>
                     </div>
                 <?php endif; ?>

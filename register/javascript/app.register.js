@@ -148,7 +148,7 @@ form.addEventListener("submit", function (e) {
 
 		// console.log(fnameValue);
 		// return;
-		fetch("http://localhost/project/register/includes/register.inc.php", {
+		fetch("http://localhost/stationary/register/includes/register.inc.php", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
