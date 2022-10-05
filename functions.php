@@ -172,3 +172,108 @@ function getRowsNumberOrders($table, $condition = [])
         return $result[0];
     }
 }
+
+
+// Without loggedin the to cart senario
+
+
+function addToCart($product, $qty)
+{
+
+    $product["quantity"] = $qty;
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    if (empty($_SESSION["cart"])) {
+        $_SESSION["cart"][] = $product;
+        echo '<script type="text/javascript">toastr.info("Added to cart")</script>';
+    } else {
+        foreach ($_SESSION["cart"] as $key => $stroedItems) {
+            $ids[] = isset($stroedItems["id"]) ? $stroedItems["id"] : "";
+        }
+
+        if (!in_array($product["id"], $ids)) {
+
+            $_SESSION["cart"][] = $product;
+            echo '<script type="text/javascript">toastr.info("Added to cart")</script>';
+        } else {
+            foreach ($_SESSION["cart"] as $key => $stroedItems) {
+                if ($product["id"] == $stroedItems["id"]) {
+                    $_SESSION["cart"][$key]["quantity"]  += $qty;
+                }
+            }
+            echo '<script type="text/javascript">toastr.warning("Updated cart quantity")</script>';
+        }
+    }
+}
+
+
+function updateCart($product_id, $qty)
+{
+    foreach ($_SESSION["cart"] as $key => $stroedItems) {
+        if ($product_id == $stroedItems["id"]) {
+            $_SESSION["cart"][$key]["quantity"] = $qty;
+            if ($_SESSION["cart"][$key]["quantity"] == 0) {
+                deleteFromCart($product_id);
+            }
+            echo '<script type="text/javascript">toastr.info("Updated quantity")</script>';
+        }
+    }
+}
+
+
+
+function deleteFromCart($product_id)
+{
+    // echo $product_id;
+    foreach ($_SESSION["cart"] as $key => $stroedItems) {
+        if ($product_id == $stroedItems["id"]) {
+            unset($_SESSION["cart"][$key]);
+            echo '<script type="text/javascript">toastr.error("remove from the cart")</script>';
+        }
+    }
+}
+
+
+
+function clearCartFromSession()
+{
+    unset($_SESSION["cart"]);
+}
+
+
+
+function insertCartAfterLogin($table)
+{
+    // // print_r($_SESSION["cart"]);
+    // echo $_SESSION["cart"][0]["id"];
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    global $conn;
+
+    if (isset($_SESSION["email"])) {
+        $activeUser = getOneByEmail("users", $_SESSION["email"]);
+        $user_id = $activeUser["id"];
+        $purshced = getDataByUserid("cart", $user_id);
+        if ($purshced) {
+            $sql = "delete from cart where user_id = :user_id";
+            $query = $conn->prepare($sql);
+            $query->execute([
+                ":user_id" => $user_id,
+            ]);
+        }
+    }
+    foreach ($_SESSION["cart"] as  $value) {
+        $sql = "insert into $table (user_id,product_id,quantity) values (:user_id,:product_id,:quantity)";
+        $query = $conn->prepare($sql);
+        $query->execute([
+            ":user_id" => $user_id,
+            ":product_id" => $value["id"],
+            ":quantity" => $value["quantity"]
+        ]);
+    }
+
+    clearCartFromSession();
+}

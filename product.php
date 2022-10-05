@@ -220,29 +220,31 @@ $products = getAllData('products');
 							<?php if ($searchName == $filterproduct['name']) : ?>
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 									<!-- Block2 -->
-									<div class="block2">
+									<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 										<div class="block2-pic hov-img0">
-											<img src="./admin/img/<?php echo $filterproduct['image'] ?>" alt="IMG-PRODUCT">
+											<img src="./admin/img/<?php echo $filterproduct['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 											<a href="./product-detail.php?productid=<?php echo $filterproduct['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 												View
 											</a>
 										</div>
 
-										<div class="block2-txt flex-w flex-t p-t-14">
+										<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 											<div class="block2-txt-child1 flex-col-l ">
 												<a href="./product-detail.php?productid=<?php echo $filterproduct['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 													<?php echo $filterproduct['name'] ?>
 												</a>
 												<?php if ($filterproduct['discount'] != 1) : ?>
-													<span style="text-decoration:line-through"><?php echo $filterproduct['price'] ?> JOD</span>
-													<span class="stext-105 cl3">
-														<?php
-														$discount = $filterproduct['price'] * $filterproduct['discount'];
-														$priceAfterDiscount = $filterproduct['price'] - $discount;
-														echo $priceAfterDiscount . " JOD"
-														?>
-													</span>
+													<div>
+														<span style="text-decoration:line-through"><?php echo $filterproduct['price'] ?> JOD</span>
+														<span class="stext-105 cl3">
+															<?php
+															$discount = $filterproduct['price'] * $filterproduct['discount'];
+															$priceAfterDiscount = $filterproduct['price'] - $discount;
+															echo $priceAfterDiscount . " JOD"
+															?>
+														</span>
+													</div>
 												<?php else : ?>
 													<span><?php echo $filterproduct['price'] ?> JOD</span>
 												<?php endif; ?>
@@ -262,29 +264,31 @@ $products = getAllData('products');
 						<?php foreach ($filterPrice as $filterproduct) : ?>
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 								<!-- Block2 -->
-								<div class="block2">
+								<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 									<div class="block2-pic hov-img0">
-										<img src="./admin/img/<?php echo $filterproduct['image'] ?>" alt="IMG-PRODUCT">
+										<img src="./admin/img/<?php echo $filterproduct['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 										<a href="./product-detail.php?productid=<?php echo $filterproduct['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 											View
 										</a>
 									</div>
 
-									<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 										<div class="block2-txt-child1 flex-col-l ">
 											<a href="./product-detail.php?productid=<?php echo $filterproduct['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 												<?php echo $filterproduct['name'] ?>
 											</a>
 											<?php if ($filterproduct['discount'] != 1) : ?>
-												<span style="text-decoration:line-through"><?php echo $filterproduct['price'] ?> JOD</span>
-												<span class="stext-105 cl3">
-													<?php
-													$discount = $filterproduct['price'] * $filterproduct['discount'];
-													$priceAfterDiscount = $filterproduct['price'] - $discount;
-													echo $priceAfterDiscount . " JOD"
-													?>
-												</span>
+												<div>
+													<span style="text-decoration:line-through"><?php echo $filterproduct['price'] ?> JOD</span>
+													<span class="stext-105 cl3">
+														<?php
+														$discount = $filterproduct['price'] * $filterproduct['discount'];
+														$priceAfterDiscount = $filterproduct['price'] - $discount;
+														echo $priceAfterDiscount . " JOD"
+														?>
+													</span>
+												</div>
 											<?php else : ?>
 												<span><?php echo $filterproduct['price'] ?> JOD</span>
 											<?php endif; ?>
@@ -302,29 +306,31 @@ $products = getAllData('products');
 							<?php if ($searchName == $catproduct['name']) : ?>
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 									<!-- Block2 -->
-									<div class="block2">
+									<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 										<div class="block2-pic hov-img0">
-											<img src="./admin/img/<?php echo $catproduct['image'] ?>" alt="IMG-PRODUCT">
+											<img src="./admin/img/<?php echo $catproduct['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 											<a href="./product-detail.php?productid=<?php echo $catproduct['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 												View
 											</a>
 										</div>
 
-										<div class="block2-txt flex-w flex-t p-t-14">
+										<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 											<div class="block2-txt-child1 flex-col-l ">
 												<a href="./product-detail.php?productid=<?php echo $catproduct['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 													<?php echo $catproduct['name'] ?>
 												</a>
 												<?php if ($catproduct['discount'] != 1) : ?>
-													<span style="text-decoration:line-through"><?php echo $catproduct['price'] ?> JOD</span>
-													<span class="stext-105 cl3">
-														<?php
-														$discount = $catproduct['price'] * $catproduct['discount'];
-														$priceAfterDiscount = $catproduct['price'] - $discount;
-														echo $priceAfterDiscount . " JOD"
-														?>
-													</span>
+													<div>
+														<span style="text-decoration:line-through"><?php echo $catproduct['price'] ?> JOD</span>
+														<span class="stext-105 cl3">
+															<?php
+															$discount = $catproduct['price'] * $catproduct['discount'];
+															$priceAfterDiscount = $catproduct['price'] - $discount;
+															echo $priceAfterDiscount . " JOD"
+															?>
+														</span>
+													</div>
 												<?php else : ?>
 													<span><?php echo $catproduct['price'] ?> JOD</span>
 												<?php endif; ?>
@@ -344,29 +350,31 @@ $products = getAllData('products');
 						<?php foreach ($productbycategory as $catproduct) : ?>
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 								<!-- Block2 -->
-								<div class="block2">
+								<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 									<div class="block2-pic hov-img0">
-										<img src="./admin/img/<?php echo $catproduct['image'] ?>" alt="IMG-PRODUCT">
+										<img src="./admin/img/<?php echo $catproduct['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 										<a href="./product-detail.php?productid=<?php echo $catproduct['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 											View
 										</a>
 									</div>
 
-									<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 										<div class="block2-txt-child1 flex-col-l ">
 											<a href="./product-detail.php?productid=<?php echo $catproduct['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 												<?php echo $catproduct['name'] ?>
 											</a>
 											<?php if ($catproduct['discount'] != 1) : ?>
-												<span style="text-decoration:line-through"><?php echo $catproduct['price'] ?> JOD</span>
-												<span class="stext-105 cl3">
-													<?php
-													$discount = $catproduct['price'] * $catproduct['discount'];
-													$priceAfterDiscount = $catproduct['price'] - $discount;
-													echo $priceAfterDiscount . " JOD"
-													?>
-												</span>
+												<div>
+													<span style="text-decoration:line-through"><?php echo $catproduct['price'] ?> JOD</span>
+													<span class="stext-105 cl3">
+														<?php
+														$discount = $catproduct['price'] * $catproduct['discount'];
+														$priceAfterDiscount = $catproduct['price'] - $discount;
+														echo $priceAfterDiscount . " JOD"
+														?>
+													</span>
+												</div>
 											<?php else : ?>
 												<span><?php echo $catproduct['price'] ?> JOD</span>
 											<?php endif; ?>
@@ -385,29 +393,31 @@ $products = getAllData('products');
 							<?php if ($searchName == $product['name']) : ?>
 								<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 									<!-- Block2 -->
-									<div class="block2">
+									<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 										<div class="block2-pic hov-img0">
-											<img src="./admin/img/<?php echo $product['image'] ?>" alt="IMG-PRODUCT">
+											<img src="./admin/img/<?php echo $product['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 											<a href="./product-detail.php?productid=<?php echo $product['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 												View
 											</a>
 										</div>
 
-										<div class="block2-txt flex-w flex-t p-t-14">
+										<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 											<div class="block2-txt-child1 flex-col-l ">
 												<a href="./product-detail.php?productid=<?php echo $product['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 													<?php echo $product['name'] ?>
 												</a>
 												<?php if ($product['discount'] != 1) : ?>
-													<span style="text-decoration:line-through"><?php echo $product['price'] ?> JOD</span>
-													<span class="stext-105 cl3">
-														<?php
-														$discount = $product['price'] * $product['discount'];
-														$priceAfterDiscount = $product['price'] - $discount;
-														echo $priceAfterDiscount . " JOD"
-														?>
-													</span>
+													<div>
+														<span style="text-decoration:line-through"><?php echo $product['price'] ?> JOD</span>
+														<span class="stext-105 cl3">
+															<?php
+															$discount = $product['price'] * $product['discount'];
+															$priceAfterDiscount = $product['price'] - $discount;
+															echo $priceAfterDiscount . " JOD"
+															?>
+														</span>
+													</div>
 												<?php else : ?>
 													<span><?php echo $product['price'] ?> JOD</span>
 												<?php endif; ?>
@@ -425,29 +435,31 @@ $products = getAllData('products');
 						<?php else : ?>
 							<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 								<!-- Block2 -->
-								<div class="block2">
+								<div class="block2" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius : 8px">
 									<div class="block2-pic hov-img0">
-										<img src="./admin/img/<?php echo $product['image'] ?>" alt="IMG-PRODUCT">
+										<img src="./admin/img/<?php echo $product['image'] ?>" alt="IMG-PRODUCT" style="border-radius : 8px">
 
 										<a href="./product-detail.php?productid=<?php echo $product['id'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 											View
 										</a>
 									</div>
 
-									<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt flex-w flex-t p-t-14 p-b-5" style="justify-content: center;">
 										<div class="block2-txt-child1 flex-col-l ">
 											<a href="./product-detail.php?productid=<?php echo $product['id'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 												<?php echo $product['name'] ?>
 											</a>
 											<?php if ($product['discount'] != 1) : ?>
-												<span style="text-decoration:line-through"><?php echo $product['price'] ?> JOD</span>
-												<span class="stext-105 cl3">
-													<?php
-													$discount = $product['price'] * $product['discount'];
-													$priceAfterDiscount = $product['price'] - $discount;
-													echo $priceAfterDiscount . " JOD"
-													?>
-												</span>
+												<div>
+													<span style="text-decoration:line-through;"><?php echo $product['price'] ?> JOD</span>
+													<span class="stext-105 cl3">
+														<?php
+														$discount = $product['price'] * $product['discount'];
+														$priceAfterDiscount = $product['price'] - $discount;
+														echo $priceAfterDiscount . " JOD"
+														?>
+													</span>
+												</div>
 											<?php else : ?>
 												<span><?php echo $product['price'] ?> JOD</span>
 											<?php endif; ?>

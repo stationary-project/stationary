@@ -55,6 +55,8 @@ if (isset($_POST['submit'])) {
         ":user_id" => $user_id
     ]);
 
-    // header("location : ./product.php");
-    echo "<script>window.location = './product.php'</script>";
+    // echo '<script type="text/javascript"></script>';
+    echo "<script>
+    window.location = './profile.php';
+    </script>";
 }

@@ -90,23 +90,11 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 
 
                     <div class="flex-c-m h-full p-l-18 p-r-25 bor5">
-                        <?php if (isset($_SESSION["email"])) :
-                            $activeUser = getOneByEmail('users', $_SESSION["email"]);
-                            $user_id = $activeUser['id'];
-                            $rows = getRowsNumber("cart", ["user_id" => $user_id]) ?? "";
-                        ?>
-                            <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="<?= $rows ?>">
-                                <a href="./cart.php" style="color:black">
-                                    <i class="zmdi zmdi-shopping-cart"></i>
-                                </a>
-                            </div>
-                        <?php else : ?>
-                            <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="0">
-                                <a href="./registration.php" style="color:black">
-                                    <i class="zmdi zmdi-shopping-cart"></i>
-                                </a>
-                            </div>
-                        <?php endif; ?>
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 ">
+                            <a href="./cart.php" style="color:black">
+                                <i class="zmdi zmdi-shopping-cart"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -126,50 +114,18 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 
             <div class="flex-c-m h-full p-r-24">
                 <div class="icon-header-item-m cl2 hov-cl1 trans-04 p-lr-11">
-                    <?php if (isset($_SESSION["email"])) : ?>
 
-                        <ul class="main-menu">
-                            <li>
-                                <a href="./profile.php">MyAccount</a>
-                                <ul class="sub-menu">
-                                    <li><a href="./profile.php">Profile</a></li>
-                                    <li><a href="./register/includes/logout.inc.php">Logout</a></li>
-                                </ul>
-                                <span class="arrow-main-menu-m">
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </span>
-                            </li>
-                        </ul>
-                    <?php else : ?>
-                        <ul class="main-menu">
-                            <li>
-                                <a href="registration.php">Register \ Login</a>
-                            </li>
-                        </ul>
-                    <?php endif; ?>
 
                 </div>
             </div>
 
 
             <div class="flex-c-m h-full p-lr-10 bor5">
-                <?php if (isset($_SESSION["email"])) :
-                    $activeUser = getOneByEmail('users', $_SESSION["email"]);
-                    $user_id = $activeUser['id'];
-                    $rows = getRowsNumber("cart", ["user_id" => $user_id]) ?? "";
-                ?>
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="<?= $rows ?>">
-                        <a href="./cart.php">
-                            <i class="zmdi zmdi-shopping-cart" style="color:black"></i>
-                        </a>
-                    </div>
-                <?php else : ?>
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti" data-notify="0">
-                        <a href="./registration.php">
-                            <i class="zmdi zmdi-shopping-cart" style="color:black"></i>
-                        </a>
-                    </div>
-                <?php endif; ?>
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11">
+                    <a href="./cart.php">
+                        <i class="zmdi zmdi-shopping-cart" style="color:black"></i>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -192,6 +148,26 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
             <li>
                 <a href="product.php">Shop</a>
             </li>
+            <?php if (isset($_SESSION["email"])) : ?>
+
+                <li>
+                    <a href="./profile.php">MyAccount</a>
+                    <ul class="sub-menu-m">
+                        <li><a href="./profile.php">Profile</a></li>
+                        <li><a href="./register/includes/logout.inc.php">Logout</a></li>
+                    </ul>
+                    <span class="arrow-main-menu-m">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </span>
+                </li>
+
+            <?php else : ?>
+
+                <li>
+                    <a href="registration.php">Register \ Login</a>
+                </li>
+
+            <?php endif; ?>
         </ul>
     </div>
 
