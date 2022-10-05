@@ -44,15 +44,15 @@ require_once './layout/head.php';
                         </div>
 
 
-                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                            Submit
+                        <button class="flex-c-m stext-101 cl0 size-121 bg1 bor1 hov-btn1 p-lr-15 trans-04 pointer">
+                            Log In
                         </button>
                     </form>
                 </div>
 
 
 
-                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md  bg2">
                     <form id="registrationForm">
                         <h4 class="mtext-105 cl2 txt-center p-b-30">
                             Create An Account
@@ -89,8 +89,8 @@ require_once './layout/head.php';
 
 
 
-                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                            Submit
+                        <button class="flex-c-m stext-101 cl0 size-121 bg1 bor1 hov-btn1 p-lr-15 trans-04 pointer">
+                            Register
                         </button>
                     </form>
 

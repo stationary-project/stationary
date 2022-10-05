@@ -1,5 +1,6 @@
 <?php
-
+require_once "../../config.php";
+require_once "../../functions.php";
 $email = $_POST['emailLoginValue'];
 
 $password = $_POST['passwordLoginValue'];
@@ -21,6 +22,9 @@ if ($login->err) {
 
     // Send the user to welcome page
     // use echo to send it as a response to js
+    if (isset($_SESSION["cart"])) {
+        insertCartAfterLogin("cart");
+    }
 
     echo $login->location;
 }

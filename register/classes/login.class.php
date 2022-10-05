@@ -46,6 +46,7 @@ class Login extends Dbh
             session_start();
             $_SESSION['email'] = $userInfo[0]['email'];
 
+
             $stmt = null;
         }
 

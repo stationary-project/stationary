@@ -38,14 +38,18 @@ require_once './functions.php';
 
     ?>
     <!-- Title page -->
-    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: black;">
-        <h2 class="mtext-105 cl0 txt-center">
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92 bg2
+">
+        <h2 class="mtext-105 cl0 txt-center p-b-20" style="color: black;">
+            Name:
             <?php echo $activeUser["f_name"] . " " . $activeUser['l_name'] ?>
             <br>
+            Email:
             <?php echo $activeUser["email"] ?>
         </h2>
         <?php if ($activeUser['role'] == 'admin') : ?>
-            <a href="./admin/index.php">
+            <a href="./admin/index.php" style="color:#2a67b2; 
+">
                 Go To Dashboard
             </a>
         <?php endif ?>

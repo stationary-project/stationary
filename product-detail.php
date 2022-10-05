@@ -33,17 +33,17 @@ if (isset($_SESSION["email"])) {
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.php" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="index.php" class="mtext-80 cl8 hov-cl1 trans-04">
 				Home
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
-			<a href="product.php?categoryid=<?= $category["id"] ?>" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="product.php?categoryid=<?= $category["id"] ?>" class="mtext-80 cl8 hov-cl1 trans-04">
 				<?= $category["name"] ?>
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
-			<span class="stext-109 cl4">
+			<span class="mtext-80 cl4">
 				<?= $product["name"] ?>
 			</span>
 		</div>
@@ -94,33 +94,33 @@ if (isset($_SESSION["email"])) {
 							<?= $product["description"] ?>
 						</p>
 
-						<?php if (isset($_SESSION["email"])) : ?>
-							<div class="p-t-33">
-								<form action="" method="post">
-									<div class="flex-w flex-r-m p-b-10">
-										<div class="size-204 flex-w flex-m respon6-next">
-											<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-												<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-													<i class="fs-16 zmdi zmdi-minus"></i>
-												</div>
-
-												<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-												<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-													<i class="fs-16 zmdi zmdi-plus"></i>
-												</div>
+						<div class="p-t-33">
+							<form action="" method="post">
+								<div class="flex-w flex-r-m p-b-10">
+									<div class="size-204 flex-w flex-m respon6-next">
+										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
+											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+												<i class="fs-16 zmdi zmdi-minus"></i>
 											</div>
 
-											<button type="submit" name="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-												Add to cart
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
+											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
 
-							<?php
-							if (isset($_POST['submit'])) {
+											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+												<i class="fs-16 zmdi zmdi-plus"></i>
+											</div>
+										</div>
+
+										<button type="submit" name="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+											Add to cart
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<?php
+						if (isset($_POST['submit'])) {
+							if (isset($_SESSION["email"])) {
 								$quantity = $_POST['num-product'];
 								$sql = "SELECT * FROM cart WHERE product_id= $id AND user_id= $user_id";
 								$stmt = $conn->prepare($sql);
@@ -156,10 +156,19 @@ if (isset($_SESSION["email"])) {
 								}
 							</script>";
 								}
+							} else {
+								addToCart($product, $_POST["num-product"]);
+								echo "<script> window.location = '#related'</script>";
+								echo "
+								<script>
+								if ( window.history.replaceState ) {
+									window.history.replaceState( null, null, window.location.href );
+								}
+							</script>";
 							}
-							?>
+						}
+						?>
 
-						<?php endif; ?>
 					</div>
 				</div>
 			</div>

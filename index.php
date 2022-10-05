@@ -66,7 +66,7 @@ if (!isset($_SESSION)) {
                     </div>
                 </div>
 
-                <div class="item-slick1" style="background-image: url(images/icons/a4.png);">
+                <div class="item-slick1" style="background-image: url(images/icons/slider-10.png);">
                     <div class="container h-full">
                         <div class="flex-col-l-m h-full p-t-100 p-b-30">
 
