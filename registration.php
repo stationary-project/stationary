@@ -17,18 +17,23 @@ require_once './layout/head.php';
 
     <?php require_once './layout/header.php';
     ?>
+    <style>
+        #forms input:focus {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+        }
+    </style>
 
-
-    <section class="bg0 p-t-104 p-b-116">
+    <section class=" p-t-104 p-b-116" id="forms">
         <div class="container">
-            <div class="flex-w flex-tr">
+            <div class="row">
 
-                <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-
-                    <form id="loginForm">
-                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                <div class="bor10 col-md-5 p-lr-93 p-tb-30 p-lr-15-lg w-75-md bg0  " style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">
+                    <div style="height: 30px;" class="mt-5"></div>
+                    <form class="mt-5" id="loginForm">
+                        <h4 class="mtext-105 cl2 txt-center p-b-40">
                             Sign In
                         </h4>
+
                         <label for="email-login">Email:</label>
 
                         <div class="bor8 m-b-20 how-pos4-parent">
@@ -50,11 +55,11 @@ require_once './layout/head.php';
                     </form>
                 </div>
 
+                <div class="col-md-2"></div>
 
-
-                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md  bg2">
+                <div class="col-md-5  bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-75-md bg0  " style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;">
                     <form id="registrationForm">
-                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                        <h4 class="mtext-105 cl2 txt-center p-b-40">
                             Create An Account
                         </h4>
                         <label for="fname-registration">First Name:</label>

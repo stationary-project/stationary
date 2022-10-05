@@ -40,19 +40,34 @@ require_once './functions.php';
     <!-- Title page -->
     <section class="bg-img1 txt-center p-lr-15 p-tb-92 bg2
 ">
-        <h2 class="mtext-105 cl0 txt-center p-b-20" style="color: black;">
-            Name:
-            <?php echo $activeUser["f_name"] . " " . $activeUser['l_name'] ?>
-            <br>
-            Email:
-            <?php echo $activeUser["email"] ?>
-        </h2>
-        <?php if ($activeUser['role'] == 'admin') : ?>
-            <a href="./admin/index.php" style="color:#2a67b2; 
+        <div class="row container">
+            <div class="col-6">
+                <h2 class="pl-5 ml-5">Profile Page</h2>
+            </div>
+
+            <div class="col-3 text-center">
+                <h2>Name</h2>
+                <h4> <?php echo $activeUser["f_name"] . " " . $activeUser['l_name'] ?></h4>
+                <hr>
+                <h2>Email</h2>
+                <h4><?php echo $activeUser["email"] ?></h4>
+                <?php if ($activeUser['role'] == 'admin') : ?>
+                    <hr>
+                    <a href="./admin/index.php" style="color:#2a67b2; 
 ">
-                Go To Dashboard
-            </a>
-        <?php endif ?>
+                        Go To Dashboard
+                    </a>
+                <?php endif ?>
+
+            </div>
+
+            <div class="col-2">
+            </div>
+        </div>
+        <!-- <h2 class="mtext-105 cl0 txt-center p-b-20" style="color: black;">
+         
+        </h2> -->
+
     </section>
     <!-- <section class="sec-product bg0 p-t-10 p-b-50">
         <div class="container">
